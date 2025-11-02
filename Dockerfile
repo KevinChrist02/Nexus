@@ -1,9 +1,13 @@
-FROM python:3.13-slim
+FROM python:alpine
 
 WORKDIR /app
 
+RUN apk add --no-cache build-base musl-dev linux-headers
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+
+RUN apk del build-base musl-dev linux-headers
 
 COPY src/ /app/src/
 

@@ -1,7 +1,10 @@
-version: '3.8'
-services: 
+services:
   Nexus:
     container_name: nexus
     image: kevinchrist/nexus:v1.0
     restart: unless-stopped
+  
     network_mode: "host"
+    
+    # change the port binding how you like, e.g. "0.0.0.0:8080" ...
+    command: ["gunicorn", "--bind", "0.0.0.0:5080", "src.app:app"]

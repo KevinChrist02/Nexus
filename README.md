@@ -27,7 +27,7 @@ use the docker-compose file from this repo
 services:
   Nexus:
     container_name: nexus
-    image: kevinchrist/nexus:v1.0
+    image: kevinchrist/nexus:latest
     restart: unless-stopped
   
     network_mode: "host"

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Nexus</title>
+    <script>
+      setTimeout(function () {
+        window.location.reload(1);
+      }, 5000);
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>System Dashboard</h1>
+
+    <div class="card">
+      <h2>CPU</h2>
+      <p>Count: <span class="metric">{{ cpu_count}} Cores</span></p>
+      <p>Utilization: <span class="metric">{{ cpu_percent}}%</span></p>
+      <p>Frequenz: <span class="metric">{{ cpu_freq_current}} MHz</span></p>
+    </div>
+
+    <div class="card">
+      <h2>Memory</h2>
+      <p>Total: <span class="metric">{{ mem_total}} GB</span></p>
+      <p>Used: <span class="metric">{{ mem_used}} GB</span></p>
+      <p>Percent: <span class="metric">{{ mem_percent}}%</span></p>
+    </div>
+
+    <div class="card">
+      <h2>Disk(/)</h2>
+      <p>Total: {{ disk_total }} GB</p>
+      <p>Used: {{ disk_used }} GB</p>
+      <p>Percent: <span class="metric">{{ disk_percent }}%</span></p>
+    </div>
+  </body>
+</html>
